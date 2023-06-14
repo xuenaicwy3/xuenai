@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% block title %}
+    用户注册
+{% endblock %}
+{% block styles %}
+    {{ super() }}
+    <style>
+        #container {
+            padding-top: 30px;
+            width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        #container h1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        #container form {
+
+            margin: 0 auto;
+        }
+
+        #tab {
+            font-size: 20px;
+            text-align: left;
+            padding-left: 250px;
+            margin-bottom: 20px;
+        }
+
+        #tab span {
+            display: inline-block;
+            padding: 10px;
+            text-align: center;
+            cursor: default;
+            color: #f3f3f3;
+        }
+
+        .tips {
+            color: red;
+            font-size: 14px;
+        }
+
+        #btnCheck {
+            width: 140px;
+        }
+    </style>
+{% endblock %}
+
+{% block newcontent %}
+    <div id="container">
+        <h1>用户登录</h1>
+        <div id="tab">
+            <span>用户名 / 密码</span> | <span>手机验证码</span>
+        </div>
+        <div class="logintab">
+            <p class="tips">{{ msg }}</p>
+            <form class="form-horizontal" method="post" action="{{ url_for('user.login') }}?f=1">
+                <div class="form-group">
+
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="text" class="form-control" id="inputUsername" placeholder="username"
+                               name="username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="password"
+                               name="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-10">
+                        <button type="submit" class="btn btn-primary col-md-3">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录
+                        </button>
+                        <button type="reset" class="btn btn-primary col-md-3 col-md-offset-1">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="logintab">
+            <p class="tips">{{ msg }}</p>
+            <form class="form-horizontal" method="post" action="{{ url_for('user.login') }}?f=2">
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="text" class="form-control" id="inputPhone" placeholder="输入手机号码"
+                               name="phone"><span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4 col-md-offset-3">
+                        <input type="text" class="form-control" id="inputCode" placeholder="输入验证码"
+                               name="code">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="button" id="btnCheck" class="btn btn-info" value="发送验证码"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-10">
+                        <button type="submit" class="btn btn-primary col-md-3">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录
+                        </button>
+                        <button type="reset" class="btn btn-primary col-md-3 col-md-offset-1">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script>
+        $(function () {
+                // 显示|隐藏 登录方式
+                $(".logintab").hide();
+                $(".logintab").first().show();
+                $("#tab span").each(function (i) {
+                    $(this).click(function () {
+                        $(".logintab").hide();
+                        $(".logintab").eq(i).show();
+                    })
+                });
+
+                // 发送验证码
+                $('#btnCheck').click(function () {
+                    let phone = $('#inputPhone').val();
+                    let span_obj = $('#inputPhone').next('span');
+                    span_obj.css({'color': 'red', 'font-size': '12px'});
+                    if (phone.length == 11) {
+                        //发送ajax
+                        $.get('{{ url_for('user.send_message') }}', {phone: phone}, function (data) {
+                            if (data.code == 200) {
+                                alert('短信发送成功请查收！');
+                            } else {
+                                alert(data.msg);
+                            }
+                        });
+                    } else {
+                        span_obj.text('必须输入11位手机号码')
+                    }
+                });
+            }
+        )
+
+    </script>
+{% endblock %}
+

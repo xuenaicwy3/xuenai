@@ -1,0 +1,10 @@
+<!--pages/predict/index.wxml-->
+<view class="img">
+  <image wx:if="{{tempFilePaths}}" src="{{tempFilePaths}}" mode='widthFix' bindload="image_load"></image>
+  <view wx:else></view>
+</view>
+<view class="container">
+    <text class='title'>诊断结果</text>
+    <text class='text'>{{result[0]}}</text>
+</view>
+

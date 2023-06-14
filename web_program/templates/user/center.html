@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% block title %}
+    用户中心
+{% endblock %}
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/center.css') }}">
+        <style>
+        #container {
+            padding-top: 30px;
+            width: 1000px;
+            height: 1000px;
+            margin: 0 auto;
+            background-color: rgba(131, 202, 227, 0.7);;
+        }
+
+        img {
+            width: 50%;
+            height: 50%;
+        }
+
+        #photo {
+            text-align: center;
+            width: 700px;
+            height: 500px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+{#    <style type="text/css">#}
+{#        .text-width{height: 100px; display: inline-block}#}
+{#    </style>#}
+{% endblock %}
+{% block newcontent %}
+    <div id="container">
+        <div id="left">
+            <p>用户信息修改</p>
+            <p>智能诊断</p>
+            <p>病理库管理</p>
+{#            <p>医疗资讯</p>#}
+            <p>关于我设置</p>
+        </div>
+        <div id="right">
+            <div class="right1">
+                <h2> 用户信息修改</h2>
+                <form action="{{ url_for('user.user_change') }}" method="post" enctype="multipart/form-data">
+                    <p><input type="text" class="form-control" id="InputUsername" name="username"
+                              value="{{ g.user.username }}">
+                    </p>
+                    <p><input type="text" class="form-control" id="InputPhone" name="phone"
+                              value="{{ g.user.phone }}"><span></span>
+                    </p>
+                    <p><input type="email" class="form-control" id="InputEmail1" name="email"
+                              value="{{ g.user.email }}">
+                    </p>
+                    <p><input type="file" id="exampleInputFile" name="icon"></p>
+                    <p>
+                        <img src="{% if g.user.icon %} {{ url_for('static',filename=user.icon) }} {% else %}{{ url_for('static',filename='images/touxiang.jpg') }}{% endif %}"
+                             alt="" width="90"
+                             height="100">
+                    </p>
+                    <p>
+                        <button type="submit" class="btn btn-primary">用户信息修改</button>
+                    </p>
+
+                </form>
+            </div>
+            <div class="right1">
+                <form action="{{ url_for('user.upload_photo') }}" method="post" enctype="multipart/form-data"
+                      class="form-inline">
+                    <input type="file" name="photo" class="form-control" id="file0">
+                    <img src="" id="img0" style="margin-top:20px;width: 35rem;height: 30rem;">
+                    <input type="button" id="b0" onclick="test()" value="预测">
+                    <div style="border-bottom: 1px solid #CCCCCC;line-height: 60px;
+                        font-size:16px; margin-top: 5px; margin-left: -100px">
+                        <pre id="out" style="font-size: 16px; font-weight: bold"></pre>
+                    </div>
+
+                    <input type="submit" value="上传病理库" class="btn btn-default">
+                </form>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>乳腺癌病理图像</h3>
+{#                        <div class="row">#}
+{#                            {% for photo in photos %}#}
+{#                                <div class="col-xs-8 col-sm-4">#}
+{#                                    <img src="http://qb894qzgn.bkt.clouddn.com/{{ photo.photo_name }}"#}
+{#                                         alt="..." class="img-rounded image">#}
+{#                                    <button class="btn btn-info btn-xs photo-del" tag="{{ photo.id }}">删除</button>#}
+{#                                </div>#}
+{#                                <div class="col-xs-8 col-sm-4">#}
+{#                                     <img src="{{ url_for('static',filename=photo.photo_name) }}" id="img0"#}
+{#                                         alt="..." class="img-rounded image" >#}
+{#                                          <p>{{ photo.photo_name }}</p>#}
+{#                                          <p>{{ photo.photo_predict }}</p>#}
+{#                                    <input type="button" id="b0" onclick="test()" value="预测">#}
+{#                                    <pre  id="out" style="width:320px;height:50px;line-height: 50px;margin-top:20px;"></pre>#}
+{#                                    <button class="btn btn-info btn-xs photo-del" tag="{{ photo.id }}">删除</button>#}
+{#                                </div>#}
+{#                            {% endfor %}#}
+{##}
+{#                        </div>#}
+                    </div>
+                </div>
+
+            </div>
+            <div class="right1"  id="container">
+{#                    病理库管理#}
+                    {% for photo in photos %}
+                        <div id="photo" >
+                            <form action="{{ url_for('user.photo_update') }}" method="post" enctype="multipart/form-data">
+                                  <img src="{{ url_for('static', filename=photo.photo_name) }}" alt="" >
+{#                                  <input type="hidden" name="id" value="{{ photo.id }}">#}
+                                  <input type="hidden" name="id" value="{{ photo.id }}">
+                                  <p><input type="text" name="user_id" id="InputUsername" style="text-align: center; font-weight: bold; " value="用户：xuenai"></p>
+                                  <p><input type="text" name="photo_name" class="form-control" style="text-align: center; font-weight: bold; " value="上传图像名：{{ photo.photo_name }}"></p>
+                                  <p><input type="text" name="photo_datetime" class="form-control" style="text-align: center; font-weight: bold; " value="上传时间:{{ photo.photo_datetime }}"></p>
+                                  <p><input type="text" name="photo_predict" class="form-control" style="text-align: center; font-weight: bold; " value="诊断结果:{{ photo.photo_predict }}"></p>
+                                  <p><input type="text" name="photo_advise" class="form-control text-width" style="text-align: center;font-weight: bold; " value="治疗建议:{{ photo.photo_advise }}"></p>
+                                  <button type="submit" class="btn btn-info  btn-primary" style="font-weight: bold;color: #1a1a1a">修改</button>
+                            </form>
+                                  <button class="btn btn-info  photo-del" style="background-color: red; font-weight: bold; color: #1a1a1a" tag="{{ photo.id }}">删除</button>
+                        </div>
+
+                    {% endfor %}
+            </div>
+            <div class="right1" style="padding-top: 20px">
+                <form action="{{ url_for('article.publish_article') }}" method="post">
+                    <p><input type="text" class="form-control" id="InputTitle" name="title"
+                              placeholder="请输入文章标题">
+                    </p>
+                    <p>
+                        <select name="type" class="form-control">
+                            <option value="0">请选择文章分类</option>
+                            {% for type in types %}
+                                <option value="{{ type.id }}">{{ type.type_name }}</option>
+                            {% endfor %}
+
+                        </select>
+                    </p>
+                    <p>
+                        <textarea name="content" class="mytextarea">
+
+                        </textarea>
+                    </p>
+                    <p></p>
+                    <p style="text-align: right;">
+                        <button type="submit" class="btn btn-primary">发表文章</button>
+                    </p>
+
+                </form>
+            </div>
+            <div class="right1" style="padding-top: 30px">
+                <form action="{{ url_for('user.user_change') }}" method="post" enctype="multipart/form-data">
+                    <p>
+                        <textarea name="content" class="mytextarea">
+
+                        </textarea>
+                    </p>
+                    <p></p>
+                    <p style="text-align: right;">
+                        <button type="submit" class="btn btn-primary">更改我的</button>
+                    </p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static',filename='tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/center.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script >
+    $("#file0").change(function(){
+        var objUrl = getObjectURL(this.files[0]) ;//获取文件信息
+        console.log("objUrl = "+objUrl);
+        if (objUrl) {
+            $("#img0").attr("src", objUrl);
+        }
+    });
+
+    function test() {
+        var fileobj = $("#file0")[0].files[0];
+        console.log(fileobj);
+        var form = new FormData();
+        form.append("photo", fileobj);
+        var out='';
+        var flower='';
+        $.ajax({
+            type: 'POST',
+            url: "predict",
+            data: form,
+            async: false,       //同步执行
+            processData: false, // 告诉jquery要传输data对象
+            contentType: false, //告诉jquery不需要增加请求头对于contentType的设置
+            success: function (arg) {
+            console.log(arg)
+            out = arg.result[0];
+        },error:function(){
+                console.log("后台处理错误");
+            }
+    });
+
+        {#out.forEach(e=>{#}
+        {#    flower+=`<div style="border-bottom: 1px solid #CCCCCC;line-height: 60px;font-size:16px;">${e}</div>`});#}
+
+        {#document.getElementById("out").innerHTML=flower;#}
+        document.getElementById("out").innerHTML=out;
+
+    }
+
+    function getObjectURL(file) {
+        var url = null;
+        if(window.createObjectURL!=undefined) {
+            url = window.createObjectURL(file) ;
+        }else if (window.URL!=undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file) ;
+        }else if (window.webkitURL!=undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file) ;
+        }
+        return url ;
+    }
+</script>
+{% endblock %}

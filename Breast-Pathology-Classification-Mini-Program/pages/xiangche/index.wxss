@@ -1,0 +1,22 @@
+/* pages/xiangche/index.wxss */
+page {
+    /* background:#FFDAB9; */
+  }
+  image {
+    position: relative;
+    width: 100%;
+  }
+  
+  .button {
+    position: absolute;
+    top: 60%;
+    /* margin-top: 10%; */
+    display: block;
+    width: 360rpx;
+    height: 90rpx;
+    margin: 40rpx;
+    background-color: #FFA07A;
+    color: white;
+    border-radius: 98rpx;
+    background: bg_red;
+  }

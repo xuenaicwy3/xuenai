@@ -1,0 +1,54 @@
+<!-- 
+    原图的宽度和高度  1125 * 352 px
+    swiper 宽度 / swiper  高度  =  原图的宽度  /  原图的高度
+    swiper 高度  = swiper  宽度 * 原图的高度 / 原图的宽度
+    height: 100vw * 352 / 1125
+    autoplay 自动轮播
+    interval 修改轮播时间
+    circular 衔接轮班
+    indicator-dots 显示 指示器  分页器  索引器
+    indicator-color  指示器的未选择的颜色
+    indicator-active-color  选中的时候的指示器的颜色
+ 
+ -->
+ <!-- 658 * 439 -->
+<!-- 轮播图 -->
+<swiper autoplay interval="2000" circular indicator-dots indicator-color="#0094ff" indicator-active-color="#ff0094">
+  <swiper-item> <image mode="widthFix" src="http://hbimg.huabanimg.com/55c69b3597f71f2fcc6fad281634a84b09e2c1b2e738-mk0jvg_fw658"/></swiper-item>
+  <swiper-item> <image mode="widthFix" src="https://p0.ssl.qhimgs1.com/t01c0ae9ac9bab73144.jpg"/></swiper-item>
+  <swiper-item> <image mode="widthFix" src="http://img95.699pic.com/photo/40145/3346.jpg_wh300.jpg!/fh/300/quality/90"/></swiper-item>    
+</swiper>
+
+<!-- 咚咚云医 -->
+<view class="menzhen">
+  <view class="menzhen-top">
+    <text>互联网医疗</text>
+    <view class="menzhen-top-zhanwei"></view>
+    <view class="menzhen-top-gd">
+      <text>更多>></text>
+    </view>
+  </view>
+  <view class="menzhen-bottom">
+    <view class="menzhen-bottom-items">
+      <image mode="widthFix" src="/icons/jiankang.png" bindtap="BMI"></image>
+      <text>健康自评</text>
+    </view>
+    <view class="menzhen-bottom-items">
+      <image mode="widthFix" src="/icons/zhenduan.png" bindtap="uploadImage"></image>
+      <text>病理诊断</text>
+    </view>
+  </view>
+</view>
+
+<!-- 便民服务 -->
+<view class="bmfuwu">
+  <view class="bmfuwu-top">
+    <view class="bmfuwu-top-gd">
+    </view>
+  </view>
+  <view class="bmfuwu-bottom">
+  </view>
+</view>
+<!--  -->
+<view class="bmfuwu1">
+</view>

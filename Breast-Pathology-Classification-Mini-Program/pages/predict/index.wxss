@@ -1,0 +1,32 @@
+/* pages/predict/index.wxss */
+page {
+    /* background:#FFDAB9; */
+  }
+  .img {
+
+  }
+  image {
+    width: 100%;
+  }
+  /* 预测结果 */
+  .container {
+    margin-top: -55%;
+  }
+
+  .text {
+    font-size: 40rpx;
+    color: #87CEFF;
+    margin-top: 10rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 60rpx;
+    color: #87CEFF;
+    margin-top: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

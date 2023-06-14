@@ -1,0 +1,108 @@
+
+#04e4b0
+<!-- 获取用户信息 开始 -->
+<view class="user_info_wrap">
+    <view wx:if="{{userinfo.avatarUrl}}" class="user_img_wrap">
+        <image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
+        <!-- <view class="user_bg"></view> -->
+        <view class="user_info">
+            <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+            <view class="user_name">{{userinfo.nickName}}</view>
+            <!-- <view class="user_name">樱良</view> -->
+        </view> 
+    </view>
+    <view wx:else class="user_btn">
+        <navigator url="/pages/login/login">登录
+        </navigator> 
+    </view>
+</view>
+<!-- 获取用户信息 结束 -->
+
+
+<!-- 个人中心 开始 -->
+<!-- <view class="user_contact">
+    <navigator class="use_shuoming" url="/pages/shuoming/shuoming">
+        <image mode="widthFix" src="/icons/shuoming.png"></image>
+        <text>使用说明</text>
+        <image class="jiantou" mode="widthFix" src="/icons/jiantou.png"></image>
+    </navigator>
+    <navigator class="bug_fankui" url="/pages/fankui/fankui">
+        <image mode="widthFix" src="/icons/bug.png"></image>
+        <text>Bug反馈</text>
+        <image class="jiantou" mode="widthFix" src="/icons/jiantou.png"></image>
+    </navigator>   
+    <navigator class="gongn_jianyi">
+        <image mode="widthFix" src="/icons/jianyi.png"></image>
+        <text>功能建议</text>
+        <image class="jiantou" mode="widthFix" src="/icons/jiantou.png"></image>
+    </navigator>  
+    <navigator class="haoyou_fenxiang" url="/pages/fenxiang/fenxiang">
+        <image mode="widthFix" src="/icons/fenxiang.png"></image>
+        <text>好友分享</text>
+        <image class="jiantou" mode="widthFix" src="/icons/jiantou.png"></image>
+    </navigator> 
+    <navigator class="guanyu_women" url="/pages/gywomen/gywomen">
+        <image mode="widthFix" src="/icons/women.png"></image>
+        <text>关于我们</text>
+        <image class="jiantou" mode="widthFix" src="/icons/jiantou.png"></image>
+    </navigator> 
+    <navigator class="kefu">
+        <image mode="widthFix" src="/icons/kefu.png"></image>
+        <text>联系客服</text>
+        <image class="jiantou" mode="widthFix" src="/icons/jiantou.png"></image>
+    </navigator> 
+</view> -->
+<!-- 个人中心 结束 -->
+
+
+<!-- 选择用户和医生登录  开始-->
+<view class="tab">
+  <view data-i="{{0}}" bindtap="setTabIndex" class="{{activeIndex===0? 'active':''}}">用户端</view>
+  <view data-i="{{1}}" bindtap="setTabIndex" class="{{activeIndex===1? 'active':''}}">医生端</view>
+</view>
+
+<view wx:if="{{activeIndex===0}}" bindtap="getUserProfile">
+  <view class="account row-box">
+    <image mode="widthFix" src="{{userInfo.avatarUrl}}" ></image>
+    <!-- <view class="user_name">{{userinfo.nickName}}</view> -->
+    <view>
+      <text class="nickName">{{userInfo.nickName}}</text>
+      <!-- <view class="user_name">{{userinfo.nickName}}</view> -->
+      <text wx:if="{{doctor}}">医生代码: {{userInfo.bind_account.ysdm}}</text>
+      <block wx:else>
+        <text wx:if="{{userInfo.bind_account.zxyy_id}}">病号: {{userInfo.bind_account.zxyy_id}}
+        </text>
+        <text wx:else class="account-error">
+          {{userInfo.bind_account.patientname ? '未上传身份证' : '点击绑定主账号'}}
+        </text>
+      </block>
+    </view>
+  
+    <button class="get-user-info" open-type="getUserInfo" 
+    bindgetuserinfo="settingAccount">s</button>
+  
+  </view>
+</view>
+<view wx:if="{{activeIndex===1}}">
+  <navigator url="/pages/doctor-login/doctor-login" class="account row-box">
+    <image></image>
+    <!-- <view class="user_name">{{userinfo.nickName}}</view> -->
+    <view>
+      <!-- <text class="nickName">{{userinfo.nickName}}</text> -->
+      <!-- <view class="user_name">{{userinfo.nickName}}</view> -->
+      <text wx:if="{{doctor}}">医生代码: {{userInfo.bind_account.ysdm}}</text>
+      <block wx:else>
+        <text wx:if="{{userInfo.bind_account.zxyy_id}}">病号: {{userInfo.bind_account.zxyy_id}}
+        </text>
+        <text wx:else class="account-error">
+          {{userInfo.bind_account.patientname ? '未上传身份证' : '点击绑定主账号'}}
+        </text>
+      </block>
+    </view>
+
+    <button class="get-user-info" open-type="getUserInfo" 
+    bindgetuserinfo="settingAccount">s</button>
+  
+  </navigator>
+</view>
+<!-- 选择用户和医生登录  结束-->

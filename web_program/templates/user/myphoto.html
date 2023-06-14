@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}
+    相册列表
+{% endblock %}
+{% block styles %}
+    {{ super() }}
+    <style>
+        #container {
+            padding-top: 30px;
+            width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: rgba(131, 202, 227, 0.7);;
+        }
+
+        img {
+            width: 25%;
+            height: 25%;
+        }
+
+        #photo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+{% endblock %}
+
+{% block newcontent %}
+    <div id="container">
+        {% for photo in photos.items %}
+{#        {% for photo in photos %}    #}
+{#            <div id="photo">#}
+{#                <img src="http://qb894qzgn.bkt.clouddn.com/{{ photo.photo_name }}" alt="">#}
+{#            </div>#}
+            <div id="photo">
+                <img src="{{ url_for('static', filename=photo.photo_name) }}" alt="">
+                  <p style="font-weight: bold">用户:{{ photo.user_id }}</p>
+                  <p style="font-weight: bold">图片标题名称:{{ photo.photo_name }}</p>
+                  <p style="font-weight: bold">上传时间:{{ photo.photo_datetime }}</p>
+                  <p style="font-weight: bold">诊断结果:{{ photo.photo_predict }}</p>
+                  <p style="font-weight: bold">治疗建议:{{ photo.photo_advise }}</p>
+                <button class="btn btn-info btn-xs photo-del1" tag="{{ photo.id }}">删除</button>
+            </div>
+
+        {% endfor %}
+        <nav aria-label="...">
+            <ul class="pager">
+                <li class="previous {% if not photos.has_prev %}disabled{% endif %}"><a href="{{ url_for('user.myphoto') }}?page={{ photos.prev_num }}"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+
+                <li class="next {% if not photos.has_next %}disabled {% endif %}"><a href="{{ url_for('user.myphoto') }}?page={{ photos.next_num }}">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+{% endblock %}
+
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static',filename='tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/center.js') }}"></script>
+
+{% endblock %}

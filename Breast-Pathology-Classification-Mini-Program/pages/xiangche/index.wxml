@@ -1,0 +1,8 @@
+<!--pages/xiangche/index.wxml-->
+<view class="img">
+  <image wx:if="{{tempFilePaths}}" src="{{tempFilePaths}}" mode='widthFix' bindload="image_load"></image>
+  <view wx:else></view>
+</view>
+<view class="container">
+    <button  class='button' bindtap='upload'> 上传图片 </button>
+</view>

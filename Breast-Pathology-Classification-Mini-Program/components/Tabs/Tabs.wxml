@@ -1,0 +1,28 @@
+<!--components/Tabs/Tabs.wxml-->
+<!-- 医生简介 -->
+<view class="container">
+  <view class="top">
+    <text>出 诊 医 生</text>
+  </view>
+  <view class="doctor">
+    <view class="message">
+      <image class="Icon" src='/icons/1.png'></image>
+      <view class="name">
+        <text>黎华莉</text>
+      </view>
+      <view class="section">
+        <text>美容皮肤科医生</text>
+      </view>
+    </view>
+
+    <view class="describe{{showView?'show':''}}">
+      <text class="desc" bindtap='showhide'>黎华莉 主治医师, 美容主诊医师, 皮肤性病学硕士, 毕业于浙江大学, 湖北医学会皮肤性病分会第一届皮肤激光美容分会会员; 湖北整形美容行业协会皮肤美容分会常务理事长。
+      擅长: 皮肤科常见病、多发病的诊治疗, 如湿疹、荨麻疹、特异性皮炎、脂溢性皮炎、擅长激光美容治疗, 如色素痣、黄褐斑、雀斑等。
+      </text>
+    </view>
+    <view class="date">
+      <text bindtap='Selected'>2022-7-1(星期*)上午\n</text>
+      <text bindtap='Selected'>2022-7-1(星期*)下午</text>
+    </view>
+  </view>
+</view>

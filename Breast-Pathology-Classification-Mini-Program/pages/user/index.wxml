@@ -1,0 +1,107 @@
+<!--
+ * @Author: error: git config user.name && git config user.email & please set dead value or install git
+ * @Date: 2022-05-17 17:15:05
+ * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
+ * @LastEditTime: 2022-06-09 17:14:07
+ * @FilePath: \CompetitionProject\pages\user\index.wxml
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+
+<!--pages/user/index.wxml-->
+<!-- 微信用户登录  开始-->
+<view class="backgroundColor"></view>
+<!-- <view class="user_info_wrap"> 
+</view>  -->
+<!-- 用户登录 -->
+<view data-weui-theme="{{theme}}">
+  <button class="account row-box sheyingxin" style="width: 95%; margin-top:15rpx;" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+    <image mode="widthFix" src="{{avatarUrl}}" ></image>
+    <!-- <image mode="widthFix" src="/images/shejie.jpg" ></image> -->
+    <view>
+      <!-- <text class="nickName">{{userInfo.nickName}}</text> -->
+      <!-- <text class="nickName">佘颖欣</text> -->
+      <!-- <view class="user_name">点击绑定账号</view> -->
+        <view class="user_name">
+          <view class="text1 nickName">昵称：</view>
+            <input type="nickname" class="weui-input user_name" name="nickname" placeholder="请输入昵称"/>
+        </view>
+  
+    </view>
+  </button>
+</view>
+<!-- 获取用户信息 结束 -->
+
+<!-- 乳腺癌病理检测助手 -->
+<view class="clearfix menzhen">
+    <view class="menzhen-bottom-items">
+      <image mode="widthFix" src="/icons/zhenduan.png" bindtap="uploadImage"></image>
+      <text>病理诊断</text>
+    </view>
+
+    <view class="menzhen-bottom-items">
+      <!-- <image mode="widthFix" src="/icons/jianchabaogao.png"></image>
+      <text>诊断记录</text> -->
+    </view>
+
+    <!-- <view class="menzhen-bottom-items">
+      <image mode="widthFix" src="/icons/jianchabaogao.png"></image>
+      <text>诊断记录</text>
+    </view> -->
+
+</view>
+
+<!-- 通用栏 -->
+<view class="row-box row-list clearfix">
+
+  <view>
+    <navigator url="">
+      <icon class="iconfont icon-zongjie"></icon>
+      <text>使用说明</text>
+      <icon class="iconfont icon-fangxiangyou"></icon>
+    </navigator>
+  </view>
+
+  <view>
+    <navigator url="">
+      <icon class="iconfont icon-chufang"></icon>
+      <text>Bug反馈</text>
+      <icon class="iconfont icon-fangxiangyou"></icon>
+    </navigator>
+  </view>
+
+  <block wx:if="{{!doctor}}">
+
+    <view>
+      <navigator url="">
+        <icon class="iconfont icon-yaodian"></icon>
+        <text>功能建议</text>
+        <icon class="iconfont icon-fangxiangyou"></icon>
+      </navigator>
+    </view>
+  </block>
+
+  <view>
+    <navigator url="/pages/women/women">
+      <icon class="iconfont icon-qiyejianchadan"></icon>
+      <text>关于我们</text>
+      <icon class="iconfont icon-fangxiangyou"></icon>
+    </navigator>
+  </view>
+
+</view>
+
+
+
+<!-- 版本 其他栏 -->
+<view class="row-box row-list clearfix">
+
+  <view bindtap="printVersion">
+    <icon class="iconfont icon-banben"></icon>
+    <text>版本号: {{version}}</text>
+  </view>
+</view>
+
+
+
+
+

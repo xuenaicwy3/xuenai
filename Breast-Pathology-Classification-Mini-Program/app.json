@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/user/index",
+    "pages/out/out",
+    "pages/test/test",
+    "pages/bmi/bmi",
+    "pages/paishe/paishe",
+    "pages/xiangche/index",
+    "pages/predict/index",
+    "pages/women/women"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#04e4b0",
+    "navigationBarTitleText": "乳腺癌病理分类小程序",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#04e4b0",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home-o.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my-o.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "msg": "/component/Toast/Toast"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

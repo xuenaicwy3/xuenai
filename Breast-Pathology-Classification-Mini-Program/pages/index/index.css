@@ -1,0 +1,128 @@
+page {
+  background-color: #edece8;
+}
+/**index.wxss**/
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+} */
+/* .usermotto {
+  margin-top: 200px;
+} */
+/* pages/demo10/demo10.wxss */
+swiper {
+  width: 100%;
+  height: calc(100vw * 300 / 500);
+}
+image {
+  width: 100%;
+}
+.user_content1 {
+  position: relative;
+  margin-bottom: 210rpx;
+}
+.user_content1 .user_main1 {
+  position: absolute;
+  width: 95%;
+  left: 50%;
+  top: -20rpx;
+  transform: translateX(-50%);
+}
+.user_content1 .user_main1 .history_wrap {
+  display: flex;
+  background-color: #fff;
+}
+.user_content1 .user_main1 .history_wrap .history_item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+}
+.user_content1 .user_main1 .history_wrap .history_item image {
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  margin: 10rpx auto;
+}
+.contact_wrap {
+  display: flex;
+  background-color: #fff;
+  width: 95%;
+  height: 200rpx;
+  transform: translateX(2.5%);
+}
+.contact_wrap .contact_item1 {
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 50rpx;
+  margin-top: 30rpx;
+}
+.contact_wrap .contact_item2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.contact_wrap .contact_item2 image {
+  margin-left: 120rpx;
+  margin-top: 30rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+.contact_wrap .contact_item2 text {
+  position: absolute;
+  bottom: 2%;
+  display: block;
+  margin-left: 120rpx;
+}
+.contact_wrap .contact_item3 {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 40rpx;
+}
+.class_wrap {
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  width: 95%;
+  height: 200rpx;
+  margin-top: 20rpx;
+  transform: translateX(2.5%);
+}
+.class_wrap {
+  position: relative;
+}
+.class_wrap text {
+  position: absolute;
+  top: 45%;
+  left: 35%;
+  text-align: center;
+  color: #04e4b0;
+}
+.zixun {
+  background-color: pink;
+  height: 300rpx;
+}
+.zixun .zixun-item {
+  display: flex;
+  width: 50%;
+  height: 200rpx;
+  background-color: #04e4b0;
+}
+.zixun .zixun-item image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.zixun .zixun-item text {
+  transform: translateY(10rpx);
+}

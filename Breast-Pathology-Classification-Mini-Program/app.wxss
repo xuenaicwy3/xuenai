@@ -1,0 +1,327 @@
+/* @import "./iconFont/iconfont.wxss"; */
+@import "./styles/iconfont.wxss";
+
+page,view,text,swiper,swiper-item,image,navigator{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+page{
+    /* 定义主题颜色 */
+    /* --themeColor:#eb4450; */
+    --themeColor: #04e4b0; 
+    /* 
+    定义统一字体大小  假设设计稿  大小时  375px
+    1px= 2rpx
+    14px= 28rpx
+    */
+    font-size: 28rpx;
+    --shadow-color: rgba(0, 0, 0, .15);
+    --main-icon-color: #4684f7;
+    --main-font-color: #11cd6e;
+    --main-fontSelect-color: #a9b7b7;
+    background-color: #f7f7f7;
+}
+
+/* 背景 */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  z-index: -1;
+}
+
+.backgroundColor {
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 120rpx;
+  /* background-color: #b5cfff; */
+  background-color: #04e4b0
+}
+
+
+/* LOGO */
+.logo {
+  display: block;
+  width: 180rpx;
+  height: 180rpx;
+  margin: 50rpx auto;
+  border-radius: 90rpx;
+  box-shadow: 0 0 100rpx #1831c2;
+  border: 5rpx solid rgba(255, 255, 255, 0.3);
+}
+
+/* 修复浮动 */
+.clearfix::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  clear: both;
+}
+
+/* 主盒子 */
+.row-box {
+  width: 94vw;
+  min-height: 30rpx;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+/* 四列列表 */
+.four-list {
+  margin-top: 25rpx;
+  padding: 0;
+  font-size: 30rpx;
+}
+  .four-list-tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 0 2.5%;
+    padding: 20rpx 10rpx;
+    text-align: left;
+    color: #888;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+  }
+
+  .four-list .four-list-tag > view > text:active, 
+  .four-list .four-list-tag > view > text:active + icon {
+    color: #666;
+  }
+
+  .four-list-all .icon-fangxiangyou {
+    font-size: 15px;
+    margin: -17rpx 0 0 10rpx;
+  }
+
+   .four-list-all {
+    color: #ccc;
+    font-weight: normal;
+    text-shadow: none;
+    font-size: 15px;
+  }
+
+  .four-list-icon > view {
+    float: left;
+    width: 25%;
+    padding: 15rpx 10rpx;
+    box-sizing: border-box;
+    text-align: center;
+    color: #777;
+  }
+
+  .four-list-icon icon:nth-child(1),
+   .four-list-icon image,
+   .user-icon {
+    display: block;
+    width: 50rpx;
+    height: 50rpx;
+    margin: 0 auto 10rpx;
+    padding: 20rpx;
+    color: rgba(255, 255, 255, .8);
+    font-size: 50rpx;
+    text-align: center;
+    background-color: #149be7;
+    border-radius: 50rpx;
+    box-shadow: 0 2px 3px var(--shadow-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+    transition: .1s;
+  }
+
+  .four-list > view icon:nth-child(1):active {
+    text-shadow: .5px .5px 1px rgba(0, 0, 0, .6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .3)
+  }
+
+  .four-list > view image,
+  .user-icon {
+    padding: 0;
+    width: 90rpx;
+    height: 90rpx;
+    background-color: #fff;
+    border: 1px solid #eee;
+  }
+
+
+ /* 图标颜色 */
+ .four-list-icon .color1 { background-image: linear-gradient(135deg, #FFA7E7, #EA6362) }
+ .four-list-icon .color2 { background-image: linear-gradient(135deg, #17EAD9, #6078EA) }
+ .four-list-icon .color3 { background-image: linear-gradient(135deg, #45E994, #23BCBB) }
+ .four-list-icon .color4 { background-image: linear-gradient(135deg, #FFDEA7, #EA6362) }
+ .four-list-icon .color5 { background-image: linear-gradient(135deg, #fa71cd, #c471f5) }
+ .four-list-icon .color6 { background-image: linear-gradient(135deg, #7C4DFF, #7B1FA2) }
+ .four-list-icon .color7 { background-image: linear-gradient(135deg, #00c6fb, #005bea) }
+ .four-list-icon .color8 { background-image: linear-gradient(135deg, #F57C00, #CF360C) }
+
+/* 搜索栏 */
+.search-box {
+ position: absolute;
+ top: 390rpx;
+ width: 90vw;
+ margin: 0 5vw;
+ padding: 0;
+ background-color: white;
+ border-radius: 5px;
+ box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+ transition: .25s;
+}
+ .search-box input {
+   height: 70rpx;
+   padding: 0 40px 0 .5em;
+   color: #555;
+ }
+ .search-box .icon-sousuo {
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 25rpx;
+   line-height: 70rpx;
+   font-size: 40rpx;
+   color: #888;
+ }
+ .search-placeholder {
+   color: #ddd;
+ }
+
+
+/* 横轴列表 */
+.row-list {
+ margin-top: 20px;
+ padding: 5rpx 0;
+ color: #777;
+ font-size: 30rpx;
+}
+ .row-list > view {
+   margin: 0 10rpx;
+   padding: 10rpx;
+   border-bottom: 1px solid #eee;
+ }
+ .row-list > view icon {
+   margin-right: 10rpx;
+   color: var(--main-icon-color);
+   vertical-align: middle;
+ }
+ .row-list > view text {
+   vertical-align: middle;
+ }
+ .row-list > view:last-child {
+   border-bottom: none;
+ }
+ .row-list .icon-fangxiangyou {
+   float: right;
+   color: #ccc;
+   font-size: 30rpx;
+ }
+ .navigator-hover {
+   background: transparent;
+ }
+
+
+/* 字体图标 */
+@font-face {
+ font-family: 'iconfont';  /* project id 906741 */
+ src: url('//at.alicdn.com/t/font_906741_fjs57q4lyma.eot');
+ src: url('//at.alicdn.com/t/font_906741_fjs57q4lyma.eot?#iefix') format('embedded-opentype'),
+ url('//at.alicdn.com/t/font_906741_fjs57q4lyma.woff') format('woff'),
+ url('//at.alicdn.com/t/font_906741_fjs57q4lyma.ttf') format('truetype'),
+ url('//at.alicdn.com/t/font_906741_fjs57q4lyma.svg#iconfont') format('svg');
+}
+.iconfont {
+ font-family: "iconfont" !important;
+ font-size: 50rpx;
+ font-style: normal;
+ color: currentColor;
+ vertical-align: middle;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tupianpx-:before { content: "\e644"; }
+.icon-nvyisheng-mian:before { content: "\e7da"; }
+.icon-nanyisheng-mian:before { content: "\e7db"; }
+.icon-tianjia:before { content: "\e60a"; }
+.icon-shenfenzhengzheng:before { content: "\e60f"; }
+.icon-shenfenzhengfan:before { content: "\e611"; }
+.icon-shangchuan:before { content: "\e6b7"; }
+.icon-qiyejianchadan:before { content: "\e8d6"; }
+.icon-chufang:before { content: "\e651"; }
+.icon-bumen:before { content: "\e7d4"; }
+.icon-code:before { content: "\e616"; }
+.icon-qianbao:before { content: "\e637"; }
+.icon-yaodian:before { content: "\e668"; }
+.icon-aixin-copy:before { content: "\e60e"; }
+.icon-neike:before { content: "\e677"; }
+.icon-fuchanke:before { content: "\e61e"; }
+.icon-fangxiangxia:before { content: "\e684"; }
+.icon-fangxiangshang:before { content: "\e685"; }
+.icon-idcard:before { content: "\e6f1"; }
+.icon-pifuke:before { content: "\e6bb"; }
+.icon-guanjiaowangtubiao59:before { content: "\e64d"; }
+.icon-trun:before { content: "\e605"; }
+.icon-kouqiangke:before { content: "\e659"; }
+.icon-qitake:before { content: "\e8b0"; }
+.icon-chengyuan:before { content: "\e65c"; }
+.icon-xiaoxi:before { content: "\e600"; }
+.icon-tuina:before { content: "\e749"; }
+.icon-yinhangqia:before { content: "\e64b"; }
+.icon-xingbie:before { content: "\e650"; }
+.icon-shouji:before { content: "\e634"; }
+.icon-guke:before { content: "\e628"; }
+.icon-anquan:before { content: "\e610"; }
+.icon-chusheng:before { content: "\e624"; }
+.icon-chenggong:before { content: "\e609"; }
+.icon-wrong:before { content: "\e615"; }
+.icon-tengtongke:before { content: "\e635"; }
+.icon-jinggao:before { content: "\e604"; }
+.icon-erbihouke:before { content: "\e990"; }
+.icon-xiugai:before { content: "\e84d"; }
+.icon-fangxiang-zuo:before { content: "\e6a6"; }
+.icon-yanzhengma:before { content: "\e8a0"; }
+.icon-erke:before { content: "\e636"; }
+.icon-fangxiang:before { content: "\e606"; }
+.icon-zongjie:before { content: "\e603"; }
+.icon-zhuanjia:before { content: "\e6a5"; }
+.icon-fangxiangyou:before { content: "\e608"; }
+.icon-zhiwen:before { content: "\e60b"; }
+.icon-jianyan:before { content: "\e814"; }
+.icon-loading:before { content: "\e6dc"; }
+.icon-duanxin:before { content: "\e63f"; }
+.icon-suo:before { content: "\e6a9"; }
+.icon-banben:before { content: "\e607"; }
+.icon-Bchaoyuyue-K:before { content: "\e7b8"; }
+.icon-add:before { content: "\e60c"; }
+.icon-yichu:before { content: "\e623"; }
+.icon-Micon-zixun:before { content: "\e7e2"; }
+.icon-location:before { content: "\e601"; }
+.icon-wode:before { content: "\e72a"; }
+.icon-sousuo:before { content: "\e602"; }
+
+/* 医生简介 */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.top{
+  width: 98%;
+  height: 30px;
+  position: absolute;
+  top:2px;
+  background-color: #f5f5f5;
+  text-align: center;
+  color:black;
+}

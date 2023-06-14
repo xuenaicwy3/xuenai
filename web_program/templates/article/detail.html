@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %}
+    文章详情
+{% endblock %}
+{% block styles %}
+    {{ super() }}
+    <style>
+        #container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #detail{
+            background-color: rgba(232, 243, 242, 0.5);
+            width: 90%;
+            margin-top: 50px;
+        }
+        #detail h2{
+            text-align: center;
+        }
+        #detail p {
+            overflow: auto;
+        }
+
+        #left {
+            float: left;
+        }
+
+        #right {
+            float: right;
+            margin-right: 30px;
+        }
+
+        #content {
+            margin-top: 30px;
+        }
+    </style>
+{% endblock %}
+{% block newcontent %}
+    <div id="container">
+        <div id="detail">
+            <h2>{{ article.title }}</h2>
+            <p>
+            <div id="left">作者:{{ article.user.username }} &nbsp;&nbsp;&nbsp; &nbsp;
+                发布时间: {{ article.pdatetime }}</div>
+            <div id="right">
+                <span class="glyphicon glyphicon-heart"
+                      aria-hidden="true"></span>&nbsp;&nbsp;<span tag="0">{{ article.save_num }}</span>
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                <span class="glyphicon glyphicon-thumbs-up"
+                      aria-hidden="true"></span>&nbsp;&nbsp;<span tag="0">{{ article.love_num }}</span>
+            </div>
+            </p>
+            <div id="content">
+                {{ article.content|cdecode|safe }}
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script>
+        $(function () {
+            // 收藏
+            $('.glyphicon-heart').click(function () {
+
+            });
+            // 点赞
+            $('.glyphicon-thumbs-up').click(function () {
+
+                let $this = $(this);
+                let tag = $this.next('span').attr('tag');
+
+                $.get('{{ url_for('article.article_love') }}', {aid:{{article.id}},tag:tag}, function (data) {
+                    $this.next('span').text(data.num);
+
+                });
+                if (tag == 1) {
+                    $this.css({'color':'black'});
+                    $this.next('span').attr('tag',"0");
+                } else {
+                    $this.css({'color':'red'});
+                    $this.next('span').attr('tag',"1");
+                }
+
+
+            });
+
+        })
+    </script>
+{% endblock %}

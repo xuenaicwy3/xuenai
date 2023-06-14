@@ -1,0 +1,10 @@
+{
+   "0": "adenosis(腺瘤)",
+   "1": "fibroadenoma(纤维腺瘤)",
+   "2": "phyllodes_tumor(叶状肿瘤)",
+   "3": "tubular_adenoma(管状腺瘤)",
+   "4": "ductal_carcinoma(导管癌)",
+   "5": "lobular_carcinoma(小叶癌)",
+   "6": "mucinous_carcinoma(粘液癌)",
+   "7": "papillary_carcinoma(乳头状癌)"
+}

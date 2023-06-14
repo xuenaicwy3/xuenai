@@ -1,0 +1,21 @@
+<!--pages/bmi/bmi.wxml-->
+<view class="page-section">
+  <view class="weui-cells_title" style="font-size: 36rpx;">身高(cm)</view>
+  <view class="weui-cells weui-cell_input">
+      <view class="weui-cell weui-cell_input" style="margin-top: 5rpx;">
+          <input type="weui-input" bindinput="heightInput" name="height" type="text" style="font-size: 30rpx;" auto-focus placeholder="请输入数字"/>
+      </view>
+  </view>
+</view>
+
+<view class="page-section" style="margin-top: 10rpx;">
+  <view class="weui-cells__title" style="font-size: 36rpx;">体重(kg)</view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input" style="margin-top: 5rpx;">
+          <input type="weui-input" bindinput="weightInput" name="weight" type="text" style="font-size: 30rpx;" auto-focus placeholder="请输入数字" />
+      </view>
+  </view>
+</view>
+<view style="font-size: 30rpx; margin-top: 10rpx;">{{bmi}}</view>
+<view style="font-size: 36rpx; margin-top: 10rpx;">{{info}}</view>
+<button bindtap="bmi" data-type="string" type="primary">算一算</button>

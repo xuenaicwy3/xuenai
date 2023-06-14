@@ -1,0 +1,220 @@
+.user_info_wrap {
+  height: 45vh;
+  overflow: hidden;
+  background-color: var(--themeColor);
+  position: relative;
+}
+.user_info_wrap .user_img_wrap {
+  position: relative;
+}
+.user_info_wrap .user_img_wrap .user_bg {
+  width: 100%;
+  height: 50vh;
+  filter: blur(10rpx);
+}
+.user_info_wrap .user_img_wrap .user_info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  text-align: center;
+}
+.user_info_wrap .user_img_wrap .user_info .user_icon {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_info_wrap .user_img_wrap .user_info .user_name {
+  color: #fff;
+  margin-top: 40rpx;
+}
+.user_info_wrap .user_btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
+  border: 1rpx solid greenyellow;
+  color: greenyellow;
+  font-size: 38rpx;
+  padding: 30rpx;
+  border-radius: 10rpx;
+}
+/* 个人中心 开始 */
+.user_contact {
+  display: flex;
+  flex-direction: column;
+}
+.user_contact .use_shuoming {
+  position: relative;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ccc;
+  padding: 5rpx 0;
+}
+.user_contact .use_shuoming image {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+}
+.user_contact .use_shuoming text {
+  position: absolute;
+  top: 15rpx;
+  left: 80rpx;
+  display: flex;
+  font-size: 40rpx;
+}
+.user_contact .use_shuoming image.jiantou {
+  position: absolute;
+  display: block;
+  margin-right: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+  right: 10rpx;
+}
+.user_contact .bug_fankui {
+  position: relative;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ccc;
+  padding: 5rpx 0;
+}
+.user_contact .bug_fankui image {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+}
+.user_contact .bug_fankui text {
+  position: absolute;
+  top: 15rpx;
+  left: 80rpx;
+  display: flex;
+  font-size: 40rpx;
+}
+.user_contact .bug_fankui image.jiantou {
+  position: absolute;
+  display: block;
+  margin-right: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+  right: 10rpx;
+}
+.user_contact .gongn_jianyi {
+  position: relative;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ccc;
+  padding: 5rpx 0;
+}
+.user_contact .gongn_jianyi image {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+}
+.user_contact .gongn_jianyi text {
+  position: absolute;
+  top: 15rpx;
+  left: 80rpx;
+  display: flex;
+  font-size: 40rpx;
+}
+.user_contact .gongn_jianyi image.jiantou {
+  position: absolute;
+  display: block;
+  margin-right: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+  right: 10rpx;
+}
+.user_contact .haoyou_fenxiang {
+  position: relative;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ccc;
+  padding: 5rpx 0;
+}
+.user_contact .haoyou_fenxiang image {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+}
+.user_contact .haoyou_fenxiang text {
+  position: absolute;
+  top: 15rpx;
+  left: 80rpx;
+  display: flex;
+  font-size: 40rpx;
+}
+.user_contact .haoyou_fenxiang image.jiantou {
+  position: absolute;
+  display: block;
+  margin-right: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+  right: 10rpx;
+}
+.user_contact .guanyu_women {
+  position: relative;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ccc;
+  padding: 5rpx 0;
+}
+.user_contact .guanyu_women image {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+}
+.user_contact .guanyu_women text {
+  position: absolute;
+  top: 15rpx;
+  left: 80rpx;
+  display: flex;
+  font-size: 40rpx;
+}
+.user_contact .guanyu_women image.jiantou {
+  position: absolute;
+  display: block;
+  margin-right: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+  right: 10rpx;
+}
+.user_contact .kefu {
+  position: relative;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ccc;
+  padding: 5rpx 0;
+}
+.user_contact .kefu image {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+}
+.user_contact .kefu text {
+  position: absolute;
+  top: 15rpx;
+  left: 80rpx;
+  display: flex;
+  font-size: 40rpx;
+}
+.user_contact .kefu image.jiantou {
+  position: absolute;
+  display: block;
+  margin-right: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+  right: 10rpx;
+}

@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block title %}
+    用户注册
+{% endblock %}
+{% block styles %}
+    {{ super() }}
+    <style>
+        #container {
+            padding-top: 30px;
+            width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        #container h1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        #container form {
+
+            margin: 0 auto;
+        }
+    </style>
+{% endblock %}
+
+{% block newcontent %}
+    <div id="container">
+        <h1>用户注册</h1>
+        <form class="form-horizontal" method="post" action="{{ url_for('user.register') }}">
+            <div class="form-group">
+                <label for="inputUsername" class="col-md-2 control-label col-md-offset-1">用户名</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="inputUsername" placeholder="username" name="username">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-md-2 control-label col-md-offset-1">密码</label>
+                <div class="col-md-6">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="password"
+                           name="password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputConfirm" class="col-md-2 control-label col-md-offset-1 ">确认密码</label>
+                <div class="col-md-6">
+                    <input type="password" class="form-control" id="inputConfirm" placeholder="confirm password"
+                           name="repassword">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPhone" class="col-md-2 control-label col-md-offset-1">手机号码</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="inputPhone" placeholder="phone number" name="phone">
+                    <span> </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail" class="col-md-2 control-label col-md-offset-1">邮箱</label>
+                <div class="col-md-6">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-10">
+                    <button type="submit" class="btn btn-primary col-md-3">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册
+                    </button>
+                    <button type="reset" class="btn btn-primary col-md-3 col-md-offset-1">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+{# 添加js脚本 #}
+{% block scripts %}
+    {{ super() }}
+    <script>
+        $('#inputPhone').blur(function () {
+            let phone = $(this).val();
+            let span_ele = $(this).next('span');
+            if (phone.length == 11) {
+                span_ele.text('');
+                $.get('{{ url_for('user.check_phone') }}', {phone: phone}, function (data) {
+                    console.log(data);
+                    console.log('注册成功');
+                    if (data.code != 200) {
+                        span_ele.css({"color": "#ff0011", "font-size": "12px"});
+                        span_ele.text(data.msg);
+                    }
+                })
+            } else {
+                span_ele.css({"color": "#ff0011", "font-size": "12px"});
+                span_ele.text('手机格式错误');
+            }
+
+        })
+    </script>
+{% endblock %}

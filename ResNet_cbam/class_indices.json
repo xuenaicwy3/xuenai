@@ -1,0 +1,10 @@
+{
+       "0": "Mductal_carcinoma",
+       "1": "Mlobular_carcinoma",
+       "2": "Mmucinous_carcinoma",
+       "3": "Mpapillary_carcinoma",
+       "4": "adenosis",
+       "5": "fibroadenoma",
+       "6": "phyllodes_tumor",
+       "7": "tubular_adenoma"
+}

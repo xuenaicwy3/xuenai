@@ -1,0 +1,5 @@
+<!--pages/women/women.wxml-->
+<!-- <text>pages/women/women.wxml</text> -->
+<view style="margin-top: 10rpx;">
+  <text>关于我们：中南民族大学生物医学工程学院，视觉认知计算与医学人工智能团队。</text>
+</view>

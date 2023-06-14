@@ -1,0 +1,154 @@
+page {
+  background-color: #edece8;
+}
+
+swiper {
+  width: 100%;
+  height: calc(60vw);
+}
+image {
+  width: 100%;
+}
+
+
+/* 互联网医疗 */
+.menzhen {
+  background-color: #fff;
+  width: 95%;
+  margin-top: 30rpx;
+  height: 280rpx;
+  transform: translateX(2.5%);
+  /* 给盒子添加阴影 */
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+.menzhen-top {
+  display: flex;
+  padding: 0 20rpx;
+  height: 80rpx;
+  /* background-color: #04e4b0; */
+  border-bottom: 1px solid #eee;
+  justify-content: space-around;
+
+}
+.menzhen-top text{
+   transform: translateY(25%);
+   margin-left: 30rpx;
+   color:#888;
+   font-weight: bold;
+  
+}
+.menzhen-top .menzhen-top-zhanwei {
+  flex: 1;
+}
+.menzhen-top-gd {
+  /* display: flex; */
+  /* margin-right: 20rpx; */
+}
+
+.menzhen-top-gd text {
+  display: inline-block;
+  transform: translateY(45%);
+  margin-right: 30rpx;
+  color: #ccc;
+  font-weight: normal;
+  font-size: 30rpx;
+  text-shadow: none;
+ 
+}
+
+
+
+.menzhen-bottom {
+  display: flex;
+  /* 显示不开就换行 */
+  flex-wrap: wrap;
+  /* background-color: blueviolet; */
+}
+.menzhen-bottom-items {
+  display: flex;
+  width: 50%;
+  /* 纵向显示 */
+  flex-direction: column;
+  /* 水平居中 */
+  align-items: center;
+}
+.menzhen-bottom-items image {
+  width: 100rpx;
+  height: 100rpx;
+  /* margin-left: 50rpx; */
+}
+.menzhen-bottom-items text {
+  color: #707070;
+}
+.menzhen-bottom-items:nth-child(-n+3) {
+  margin-top: 20rpx;
+}
+.menzhen-bottom-items:nth-child(n+4) {
+  margin-top: 20rpx;
+}
+
+/* 便民服务 */
+.bmfuwu {
+  margin-top: 30rpx;
+  background-color: #fff;
+  width: 95%;
+  transform: translateX(2.5%);
+  border-radius: 10rpx;
+  height: 260rpx;
+  /* 给盒子添加阴影 */
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+.bmfuwu-top {
+  display: flex;
+  /* background-color: blueviolet; */
+  /* 左右文字占满 */
+  justify-content: space-between;
+  padding: 0 50rpx;
+  color:#888;
+  font-weight: bold;
+  height: 60rpx;
+  border-bottom: 1px solid #eee;
+  transform: translateY(25%);
+}
+.bmfuwu-top-gd {
+  /* margin-right: 40rpx; */
+  color: #ccc;
+  font-weight: normal;
+  font-size: 30rpx;
+  text-shadow: none;
+}
+
+.bmfuwu-bottom {
+  display: flex;
+  /* background-color: chartreuse; */
+  /* 显示不开就换行 */
+  flex-wrap: wrap;
+ 
+}
+.bmfuwu-bottom-items {
+  display: flex;
+  width: 33.3%;
+  /* 纵向显示 */
+  flex-direction: column;
+  /* 水平居中 */
+  align-items: center;
+  color: #707070;
+}
+.bmfuwu-bottom-items image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.bmfuwu-bottom-items:nth-child(-n+3) {
+  margin-top: 40rpx;
+}
+/*  */
+.bmfuwu1 {
+  margin-top: 30rpx;
+  background-color: #fff;
+  width: 95%;
+  transform: translateX(2.5%);
+  border-radius: 10rpx;
+  height: 190rpx;
+  /* 给盒子添加阴影 */
+  box-shadow: 0 2px 5px var(--shadow-color);
+}

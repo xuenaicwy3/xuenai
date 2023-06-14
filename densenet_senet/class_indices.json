@@ -1,0 +1,10 @@
+{
+       "0": "adenosis",
+       "1": "fibroadenoma",
+       "2": "phyllodes_tumor",
+       "3": "tubular_adenoma",
+       "4": "ductal_carcinoma",
+       "5": "lobular_carcinoma",
+       "6": "mucinous_carcinoma",
+       "7": "papillary_carcinoma"
+}
